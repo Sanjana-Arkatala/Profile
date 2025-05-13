@@ -6,15 +6,26 @@ import Intro from '../components/Intro.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import WorkExperience from '../components/WorkExperience.astro';
+import PasswordGenerator from '../components/PasswordGenerator.astro';
+import EncoderDecoderTool from '../components/EncoderDecoderTool.astro';
+
+---
+
+
 ---
 
 <Layout>
-<main id="content" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-  <Intro />
-  <About />
-  <Projects />
-  <Skills />
-  <WorkExperience />
-  <Education />
+  <main id="content" class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Intro />
+    <About />
+    <Projects />
+    
+    <!-- ✅ Password Generator appears just after Projects -->
+    <PasswordGenerator />
+    <EncoderDecoderTool/>
+    
+    <Skills />
+    <WorkExperience />
+    <Education />
   </main>
 </Layout>

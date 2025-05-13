@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import "./node_modules/preline/variants.css";
 
-<style>
+
+style{
+
+
 .work-experience {
   padding: 2rem 1rem;
   font-family: sans-serif;
@@ -25,4 +28,4 @@
 }
 
 
-</style>
+}

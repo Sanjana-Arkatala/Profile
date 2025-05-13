@@ -1,0 +1,79 @@
+---
+// src/components/EncoderDecoderTool.astro
+---
+<!-- Encoder/Decoder Tool Section -->
+<div class="my-10 sm:my-14">
+  <h4 class="mb-5 font-small text-gray-800 dark:text-neutral-200">Encoder / Decoder Tool</h4>
+  <div class="space-y-3">
+
+    <!-- Input Text -->
+    <dl class="flex flex-col sm:flex-row gap-1">
+      <dt class="min-w-40">
+        <label for="inputText" class="block text-sm text-gray-500 dark:text-neutral-500">Input Text:</label>
+      </dt>
+      <dd class="w-full">
+        <textarea
+          id="inputText"
+          rows="3"
+          class="w-full border border-gray-300 dark:border-neutral-700 p-2 rounded bg-white dark:bg-neutral-800 text-gray-800 dark:text-neutral-200"
+        ></textarea>
+      </dd>
+    </dl>
+
+    <!-- Buttons -->
+    <dl class="flex flex-col sm:flex-row gap-1">
+      <dt class="min-w-40">
+        <span class="block text-sm text-gray-500 dark:text-neutral-500">Actions:</span>
+      </dt>
+      <dd class="flex gap-2 flex-wrap">
+        <button
+          id="encodeBtn"
+          class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm"
+        >
+          Encode (Base64)
+        </button>
+        <button
+          id="decodeBtn"
+          class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded text-sm"
+        >
+          Decode (Base64)
+        </button>
+      </dd>
+    </dl>
+
+    <!-- Output -->
+    <dl class="flex flex-col sm:flex-row gap-1">
+      <dt class="min-w-40">
+        <span class="block text-sm text-gray-500 dark:text-neutral-500">Result:</span>
+      </dt>
+      <dd>
+        <span id="outputText" class="block font-mono text-sm text-gray-800 dark:text-neutral-200 break-all"></span>
+      </dd>
+    </dl>
+  </div>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const encodeBtn = document.getElementById('encodeBtn');
+      const decodeBtn = document.getElementById('decodeBtn');
+      const input = document.getElementById('inputText');
+      const output = document.getElementById('outputText');
+
+      encodeBtn.addEventListener('click', () => {
+        try {
+          output.textContent = btoa(input.value);
+        } catch (e) {
+          output.textContent = 'Error encoding input.';
+        }
+      });
+
+      decodeBtn.addEventListener('click', () => {
+        try {
+          output.textContent = atob(input.value);
+        } catch (e) {
+          output.textContent = 'Error decoding input.';
+        }
+      });
+    });
+  </script>
+</div>
