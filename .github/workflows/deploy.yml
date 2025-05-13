@@ -33,6 +33,7 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_myportfolio-99ab9 }}" # Alternative: Service account JSON
           channelId: live # Deploy to the default live channel
           projectId: myportfolio-99ab9
+          
  # Replace with your Firebase Project ID
      #   env:
         #  FIREBASE_CLI_PREVIEWS: hostingchannels # Optional: Enable Hosting previews for PRs later
